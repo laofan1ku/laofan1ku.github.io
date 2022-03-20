@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url('../img/bs.png'),
+                linear-gradient(45deg, #83c2db, #078585) ;
+        }
+
+        .one {
+            perspective: 700px;
+        }
+
+        .box {
+            font: 0;
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            animation: feiwu 12s infinite linear;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes zhuan {
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+
+        @keyframes feiwu {
+            0% {
+                transform: rotate3d(0, 0, 0, 0);
+
+            }
+
+            15% {
+                transform: rotate3d(0, 1, 0, 180deg);
+
+            }
+
+            30% {
+                transform: rotate3d(0, 1, 1, -90deg);
+
+            }
+
+            70% {
+                transform: rotate3d(1, 0, 1, 270deg);
+
+            }
+
+            100% {
+                transform: rotate3d(1, 1, 1, 360deg);
+
+            }
+        }
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+
+        .box1 {
+            transform: translateZ(100px);
+            background: url('./images/image1.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+
+        .box2 {
+            transform: translateZ(-100px);
+            background: url('./images/image2.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+
+        .box3 {
+            transform: rotateY(90deg) translateZ(100px);
+            background: url('./images/image3.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+
+        .box4 {
+            transform: rotateY(-90deg) translateZ(100px);
+            background: url('./images/image4.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+
+
+        .box5 {
+            transform: rotateX(90deg) translateZ(-100px);
+            background: url('./images/image5.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+
+        .box6 {
+            transform: rotateX(-90deg) translateZ(-100px);
+            background: url('./images/image6.jpg')no-repeat 0 0 / 100% 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="audio" controls src="./images/music.mp3"></audio>
+    <div class="one">
+        <div class="box">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <div class="box4"></div>
+            <div class="box5"></div>
+            <div class="box6"></div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("touchstart", function () {
+      console.log(111111111);
+      function audioAutoPlay() {
+        var audio = document.getElementById("audio");
+        console.log(audio);
+        audio.play();
+      }
+      audioAutoPlay();
+    });
+  </script>
+
+</html>
